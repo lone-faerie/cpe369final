@@ -91,7 +91,7 @@ object App {
       var d = ((b.x - a.x) * (b.x - a.x)).toDouble
       d += (b.y - a.y) * (b.y - a.y)
       ((e._1._1._1, e._1._1._2), (d, e._2._1._1))
-    }).keyBy(_._1)
+    })
 
     tmp.collect().foreach(println)
   }
