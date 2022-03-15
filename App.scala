@@ -67,6 +67,7 @@ object App {
 
     val tmp = ret.groupBy(_._2._2)
       .map(e => (e._1, e._2.aggregate((0L, 0d))((u, e) => ((u._1 + e._1._2).toLong, u._2 + e._2._1), (a, b) => (a._1 + b._1, a._2 + b._2))))
+      .map(e => (e._1, (((1 / e._1.toDouble) * e._2._1).toLong, (1 / e._1.toDouble) * e._2._2)))
       .cartesian(ctrs).map(e => if (e._1._1 == e._2._1) e._1 else e._2)
 //    tmp.collect().foreach(println)
 
