@@ -88,8 +88,8 @@ object App {
     val tmp = mvmt.cartesian(ctrs).map(e => {
       val a = Point(e._1._1._2, e._1._2)
       val b = Point(e._2._1._2, e._2._2)
-      var d = (b.x - a.x) * (b.x - a.x)
-      d += ((b.y - a.y) * (b.y - a.y)).toInt
+      var d = ((b.x - a.x) * (b.x - a.x)).toDouble
+      d += (b.y - a.y) * (b.y - a.y)
       ((e._1._1._1, e._1._1._2, e._2._1._1), d)
     })
 
