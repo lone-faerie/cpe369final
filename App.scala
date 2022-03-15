@@ -90,7 +90,7 @@ object App {
       val b = Point(e._2._1._2, e._2._2)
       var d = ((b.x - a.x) * (b.x - a.x)).toDouble
       d += (b.y - a.y) * (b.y - a.y)
-      ((e._1._1._1, e._1._1._2, e._2._1._1), d)
+      ((e._1._1._1, e._1._1._2), (d, e._2._1._1))
     })
 
     tmp.collect().foreach(println)
